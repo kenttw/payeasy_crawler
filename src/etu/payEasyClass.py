@@ -3,3 +3,6 @@ class prodcut:
     p_img =''
     p_description =''
     p_price = ''
+    p_pid=''
+    
+    
