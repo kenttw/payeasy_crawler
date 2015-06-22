@@ -11,11 +11,11 @@ from BeautifulSoup import BeautifulSoup
 
 def getCategoryList():
     
-    crawled = ['29664','29652' , '29654' , '29656' , '29658' , '29659' , '29660' , '29662' , '29663' , '29989' , '30704' ]
-    
+#     crawled = ['29664','29652' , '29654' , '29656' , '29658' , '29659' , '29660' , '29662' , '29663' , '29989' , '30704' ]
+    crawled = []
 #     getCategoryId
     
-    url = 'http://www.payeasy.com.tw/index.shtml'
+    url = 'http://www.payeasy.com.tw/index_oldver/'
     rs = requests.session() 
     rs_get = rs.get(url) 
     response = rs_get.text.encode('utf8')
@@ -93,6 +93,7 @@ def getCategoryId(url):
     
     
 def isCategoryUrl(url):
+#     print url
     r = re.match(r'^http://member\.payeasy\.com\.tw/EcCategoryV2/Product/ProductList/([0-9]+)$', url)
     return r != None
 
