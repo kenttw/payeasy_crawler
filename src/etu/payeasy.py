@@ -68,7 +68,7 @@ def startCrawl(url):
                 pp.p_url = item.find('a')['href']
                 pp.p_img = item.find('img')['src']
                 pp.p_description = item.find('p',{'class':'ProductName'}).text
-                print "ProductName: " pp.p_description 
+                print "ProductName: " + pp.p_description.encode('utf-8') 
                 pp.p_price = item.find('p',{'class':'ProducPrice'}).find('span').text
                 pp.p_pid = getProductId(pp.p_url)
                 p_list.append(pp)
