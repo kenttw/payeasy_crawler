@@ -68,9 +68,12 @@ def startCrawl(url):
                 pp.p_url = item.find('a')['href']
                 pp.p_img = item.find('img')['src']
                 pp.p_description = item.find('p',{'class':'ProductName'}).text
+                print pp.p_description
                 pp.p_price = item.find('p',{'class':'ProducPrice'}).find('span').text
                 pp.p_pid = getProductId(pp.p_url)
                 p_list.append(pp)
+                
+                
             except Exception as e:
                 print e
         payeasyDB.savePostToSqlite(p_list,categoryID)
